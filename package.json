@@ -1,6 +1,6 @@
 {
   "name": "@q4ow/e-zsdk",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Unofficial API wrapper for E-Z.host",
   "private": false,
   "main": "dist/index.js",
