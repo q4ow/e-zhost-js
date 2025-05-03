@@ -1,8 +1,18 @@
 export { EZHostSDK } from './main';
 
-export * from '~/types/shortener';
-export * from '~/types/upload';
-export * from '~/types/paste';
+export type {
+    ShortenerResponse,
+    ShortenerRequest
+} from '~/routes/shortener';
+
+export type {
+    FileUploadResponse
+} from '~/routes/upload';
+
+export type {
+    PasteResponse,
+    CreatePasteRequest
+} from '~/routes/paste';
 
 export { shortenUrl } from './routes/shortener';
 export { uploadFile } from './routes/upload';

@@ -1,11 +1,11 @@
 import axios, { AxiosInstance } from "axios";
-import { BASE_URL } from "~/lib/utils";
-import { ShortenerResponse } from "~/types/shortener";
-import { FileUploadResponse } from "~/types/upload";
-import { PasteResponse } from "~/types/paste";
-import { shortenUrl } from "~/routes/shortener";
-import { uploadFile } from "~/routes/upload";
-import { createPaste } from "~/routes/paste";
+import { BASE_URL } from "./lib/utils";
+import { ShortenerResponse } from "./types/shortener";
+import { FileUploadResponse } from "./types/upload";
+import { PasteResponse } from "./types/paste";
+import { shortenUrl } from "./routes/shortener";
+import { uploadFile } from "./routes/upload";
+import { createPaste } from "./routes/paste";
 
 export class EZHostSDK {
     private api: AxiosInstance;

@@ -1,5 +1,16 @@
 import { AxiosInstance, AxiosError } from 'axios';
-import { ShortenerRequest, ShortenerResponse } from '~/types/shortener';
+
+// Import type definitions directly into this file
+export interface ShortenerResponse {
+  success: boolean;
+  message: string;
+  shortendUrl: string;
+  deletionUrl: string;
+}
+
+export interface ShortenerRequest {
+  url: string;
+}
 
 interface ShortenUrlOptions {
   maxUrlLength?: number;

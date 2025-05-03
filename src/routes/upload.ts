@@ -1,6 +1,14 @@
 import { AxiosInstance, AxiosError } from 'axios';
-import { FileUploadResponse } from '~/types/upload';
-import { MIME_TYPES } from '~/lib/utils';
+import { MIME_TYPES } from '../lib/utils';
+
+// Include type definition directly in this file
+export interface FileUploadResponse {
+  success: boolean;
+  message: string;
+  imageUrl: string;
+  rawUrl: string;
+  deletionUrl: string;
+}
 
 function getMimeType(file: Blob | File | Buffer, filename?: string): string {
   if ((file instanceof File || file instanceof Blob) && file.type) {

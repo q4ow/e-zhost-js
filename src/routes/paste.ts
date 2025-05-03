@@ -1,5 +1,20 @@
 import { AxiosInstance, isAxiosError } from 'axios';
-import { PasteResponse, CreatePasteRequest } from '~/types/paste';
+
+// Include type definition directly in this file
+export interface PasteResponse {
+  success: boolean;
+  message: string;
+  pasteUrl: string;
+  rawUrl: string;
+  deletionUrl: string;
+}
+
+export interface CreatePasteRequest {
+  text: string;
+  title: string;
+  description: string;
+  language: string;
+}
 
 export async function createPaste(
   api: AxiosInstance,
