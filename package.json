@@ -1,5 +1,5 @@
 {
-  "name": "e-zsdk",
+  "name": "e-z-js",
   "version": "0.1.0",
   "description": "Unofficial API wrapper for E-Z.host",
   "main": "dist/index.js",
