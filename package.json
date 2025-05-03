@@ -4,10 +4,18 @@
   "description": "Unofficial API wrapper for E-Z.host",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
   "scripts": {
     "build": "tsc",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "prepublishOnly": "npm run build",
+    "example:shortener": "ts-node -r tsconfig-paths/register -r dotenv/config src/examples/shortener.example.ts",
+    "example:upload": "ts-node -r tsconfig-paths/register -r dotenv/config src/examples/upload.example.ts",
+    "example:paste": "ts-node -r tsconfig-paths/register -r dotenv/config src/examples/paste.example.ts",
+    "examples": "pnpm example:shortener && pnpm example:upload && pnpm example:paste"
   },
   "keywords": [
     "sdk",
@@ -20,7 +28,9 @@
   "devDependencies": {
     "@eslint/js": "^9.26.0",
     "@types/jest": "^29.5.14",
+    "@types/node": "^22.15.3",
     "axios-mock-adapter": "^2.1.0",
+    "dotenv": "^16.5.0",
     "eslint": "^9.26.0",
     "eslint-config-prettier": "^10.1.2",
     "eslint-plugin-prettier": "^5.2.6",
@@ -29,6 +39,7 @@
     "prettier": "^3.5.3",
     "ts-jest": "^29.3.2",
     "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.31.1"
   },

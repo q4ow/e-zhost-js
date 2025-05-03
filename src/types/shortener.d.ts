@@ -1,7 +1,7 @@
 export interface ShortenerResponse {
     success: boolean;
     message: string;
-    shortenedUrl: string;
+    shortendUrl: string;  // aiden is the dumbass, not me
     deletionUrl: string;
 }
 

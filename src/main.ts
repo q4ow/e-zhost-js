@@ -1,7 +1,11 @@
 import axios, { AxiosInstance } from "axios";
 import { BASE_URL } from "~/lib/utils";
 import { ShortenerResponse } from "~/types/shortener";
-import { shortenUrl as shortenerRoute } from "~/routes/shortener";
+import { FileUploadResponse } from "~/types/upload";
+import { PasteResponse } from "~/types/paste";
+import { shortenUrl } from "~/routes/shortener";
+import { uploadFile } from "~/routes/upload";
+import { createPaste } from "~/routes/paste";
 
 export class EZHostSDK {
     private api: AxiosInstance;
@@ -20,18 +24,46 @@ export class EZHostSDK {
         });
     }
 
-    /**
-     * Shorten a URL using the E-Z.host API
-     * @param url The URL to shorten
-     * @returns Promise containing the shortened URL details
-     * @throws Error if URL is not provided or invalid
-     */
-    async shortenUrl(url: string): Promise<ShortenerResponse> {
+    async shortenUrl(url: string, options?: { maxUrlLength?: number; timeout?: number }): Promise<ShortenerResponse> {
         try {
-            return await shortenerRoute(this.api, url);
+            return await shortenUrl(this.api, url, options);
         } catch (error) {
             if (axios.isAxiosError(error)) {
                 throw new Error(`Failed to shorten URL: ${error.response?.data?.message || error.message}`);
+            }
+            throw error;
+        }
+    }
+
+    async uploadFile(
+        file: Buffer | Blob | File,
+        filename?: string,
+        options?: { timeout?: number }
+    ): Promise<FileUploadResponse> {
+        try {
+            return await uploadFile(this.api, file, filename, options);
+        } catch (error) {
+            if (axios.isAxiosError(error)) {
+                throw new Error(`Failed to upload file: ${error.response?.data?.message || error.message}`);
+            }
+            throw error;
+        }
+    }
+
+    async createPaste(
+        text: string,
+        options?: {
+            title?: string;
+            description?: string;
+            language?: string;
+            timeout?: number;
+        }
+    ): Promise<PasteResponse> {
+        try {
+            return await createPaste(this.api, text, options);
+        } catch (error) {
+            if (axios.isAxiosError(error)) {
+                throw new Error(`Failed to create paste: ${error.response?.data?.message || error.message}`);
             }
             throw error;
         }
