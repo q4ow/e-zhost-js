@@ -1,0 +1,31 @@
+{
+  "name": "e-zsdk",
+  "version": "0.1.0",
+  "description": "Unofficial API wrapper for E-Z.host",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [
+    "sdk",
+    "wrapper",
+    "typescript"
+  ],
+  "author": "Keiran",
+  "license": "MIT",
+  "packageManager": "pnpm@10.10.0",
+  "devDependencies": {
+    "@eslint/js": "^9.26.0",
+    "eslint": "^9.26.0",
+    "eslint-config-prettier": "^10.1.2",
+    "eslint-plugin-prettier": "^5.2.6",
+    "globals": "^16.0.0",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.31.1"
+  },
+  "dependencies": {
+    "axios": "^1.9.0"
+  }
+}
