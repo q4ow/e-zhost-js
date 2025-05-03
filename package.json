@@ -16,7 +16,9 @@
     "example:shortener": "ts-node -r tsconfig-paths/register -r dotenv/config src/examples/shortener.example.ts",
     "example:upload": "ts-node -r tsconfig-paths/register -r dotenv/config src/examples/upload.example.ts",
     "example:paste": "ts-node -r tsconfig-paths/register -r dotenv/config src/examples/paste.example.ts",
-    "examples": "pnpm example:shortener && pnpm example:upload && pnpm example:paste"
+    "examples": "pnpm example:shortener && pnpm example:upload && pnpm example:paste",
+    "format": "prettier --write src/{,tests}/**/*.ts",
+    "lint": "eslint --ext .ts src"
   },
   "keywords": [
     "sdk",

@@ -1,7 +1,7 @@
 export interface FileUploadResponse {
-    success: boolean;
-    message: string;
-    imageUrl: string;
-    rawUrl: string;
-    deletionUrl: string;
+  success: boolean;
+  message: string;
+  imageUrl: string;
+  rawUrl: string;
+  deletionUrl: string;
 }
