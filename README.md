@@ -1,15 +1,15 @@
-# e-zsdk
+# e-zhost-js
 
-Unofficial SDK for the E-Z.host API
+Unofficial API wrapper for the E-Z.host API
 
 ## Installation
 
 ```bash
-yarn add e-zsdk
+yarn add e-zhost-js
 
 # or
 
-pnpm add e-zsdk
+pnpm add e-zhost-js
 ```
 
 ## Usage
@@ -17,15 +17,15 @@ pnpm add e-zsdk
 ### Initialize the SDK
 
 ```typescript
-import { EZHostSDK } from 'e-zsdk';
+import { EZHostSDK } from 'e-zhost-js';
 
-const ezhost = new EZHostSDK('YOUR_API_KEY');
+const client = new EZHostSDK('YOUR_API_KEY');
 ```
 
 ### URL Shortener
 
 ```typescript
-const result = await ezhost.shortenUrl('https://example.com');
+const result = await client.shortenUrl('https://example.com');
 console.log('Shortened URL:', result.shortenedUrl);
 ```
 
@@ -33,14 +33,14 @@ console.log('Shortened URL:', result.shortenedUrl);
 
 ```typescript
 const fileBuffer = Buffer.from('file content');
-const uploadResult = await ezhost.uploadFile(fileBuffer, 'filename.txt');
+const uploadResult = await client.uploadFile(fileBuffer, 'filename.txt');
 console.log('File URL:', uploadResult.fileUrl);
 ```
 
 ### Create Paste
 
 ```typescript
-const pasteResult = await ezhost.createPaste('console.log("Hello World!")', {
+const pasteResult = await client.createPaste('console.log("Hello World!")', {
   title: 'Example Code',
   language: 'javascript'
 });
