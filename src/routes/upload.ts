@@ -1,7 +1,6 @@
 import { AxiosInstance, AxiosError } from 'axios';
 import { MIME_TYPES } from '../lib/utils';
 
-// Include type definition directly in this file
 export interface FileUploadResponse {
   success: boolean;
   message: string;

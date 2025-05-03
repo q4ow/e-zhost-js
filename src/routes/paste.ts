@@ -1,6 +1,5 @@
 import { AxiosInstance, isAxiosError } from 'axios';
 
-// Include type definition directly in this file
 export interface PasteResponse {
   success: boolean;
   message: string;
