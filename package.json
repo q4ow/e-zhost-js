@@ -26,6 +26,9 @@
   "author": "Keiran",
   "license": "MIT",
   "packageManager": "pnpm@10.10.0",
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
     "@eslint/js": "^9.26.0",
     "@types/jest": "^29.5.14",
