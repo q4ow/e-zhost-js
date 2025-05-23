@@ -1,6 +1,6 @@
 {
   "name": "e-zhost-js",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Unofficial API wrapper for E-Z.host",
   "private": false,
   "main": "dist/index.js",
