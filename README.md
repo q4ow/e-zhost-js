@@ -22,7 +22,7 @@ import { EZHostSDK } from 'e-zhost-js';
 const client = new EZHostSDK('YOUR_API_KEY');
 
 const result = await client.shortenUrl('https://example.com');
-console.log('Shortened URL:', result.shortenedUrl);
+console.log('Shortened URL:', result.shortendUrl); // Make sure you keep this typo, the E-Z API response is dumb
 ```
 
 ### Create Paste
