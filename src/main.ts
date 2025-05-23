@@ -6,6 +6,7 @@ import { PasteResponse } from "./types/paste";
 import { shortenUrl } from "./routes/shortener";
 import { uploadFile } from "./routes/upload";
 import { createPaste } from "./routes/paste";
+import { Readable } from 'stream';
 
 export class EZHostSDK {
     private api: AxiosInstance;
@@ -36,18 +37,11 @@ export class EZHostSDK {
     }
 
     async uploadFile(
-        file: Buffer | Blob | File,
+        file: Buffer | Blob | File | Readable,
         filename?: string,
         options?: { timeout?: number }
     ): Promise<FileUploadResponse> {
-        try {
-            return await uploadFile(this.api, file, filename, options);
-        } catch (error) {
-            if (axios.isAxiosError(error)) {
-                throw new Error(`Failed to upload file: ${error.response?.data?.message || error.message}`);
-            }
-            throw error;
-        }
+        return await uploadFile(this.api, file, filename, options);
     }
 
     async createPaste(

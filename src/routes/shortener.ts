@@ -1,15 +1,5 @@
 import { AxiosInstance, AxiosError } from 'axios';
-
-export interface ShortenerResponse {
-  success: boolean;
-  message: string;
-  shortendUrl: string;
-  deletionUrl: string;
-}
-
-export interface ShortenerRequest {
-  url: string;
-}
+import { ShortenerResponse, ShortenerRequest } from '../types/shortener';
 
 interface ShortenUrlOptions {
   maxUrlLength?: number;

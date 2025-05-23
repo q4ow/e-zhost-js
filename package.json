@@ -10,14 +10,8 @@
   ],
   "scripts": {
     "build": "tsc",
-    "test": "jest",
-    "test:watch": "jest --watch",
     "prepublishOnly": "npm run build",
-    "example:shortener": "ts-node -r tsconfig-paths/register -r dotenv/config src/examples/shortener.example.ts",
-    "example:upload": "ts-node -r tsconfig-paths/register -r dotenv/config src/examples/upload.example.ts",
-    "example:paste": "ts-node -r tsconfig-paths/register -r dotenv/config src/examples/paste.example.ts",
-    "examples": "pnpm example:shortener && pnpm example:upload && pnpm example:paste",
-    "format": "prettier --write src/{,tests}/**/*.ts",
+    "format": "prettier --write src/**/*.ts",
     "lint": "eslint --ext .ts src"
   },
   "keywords": [
@@ -27,25 +21,18 @@
   ],
   "author": "Keiran",
   "license": "MIT",
-  "packageManager": "pnpm@10.10.0",
+  "packageManager": "pnpm@10.11.0+sha512.6540583f41cc5f628eb3d9773ecee802f4f9ef9923cc45b69890fb47991d4b092964694ec3a4f738a420c918a333062c8b925d312f42e4f0c263eb603551f977",
   "publishConfig": {
     "access": "public"
   },
   "devDependencies": {
     "@eslint/js": "^9.26.0",
-    "@types/jest": "^29.5.14",
     "@types/node": "^22.15.3",
-    "axios-mock-adapter": "^2.1.0",
-    "dotenv": "^16.5.0",
     "eslint": "^9.26.0",
     "eslint-config-prettier": "^10.1.2",
     "eslint-plugin-prettier": "^5.2.6",
     "globals": "^16.0.0",
-    "jest": "^29.7.0",
     "prettier": "^3.5.3",
-    "ts-jest": "^29.3.2",
-    "ts-node": "^10.9.2",
-    "tsconfig-paths": "^4.2.0",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.31.1"
   },

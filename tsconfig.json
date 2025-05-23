@@ -4,6 +4,7 @@
     "module": "commonjs",
     "declaration": true,
     "outDir": "./dist",
+    "rootDir": "src",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
@@ -13,7 +14,15 @@
       "~/*": [
         "src/*"
       ]
-    }
+    },
+    "lib": [
+      "es2020",
+      "dom",
+      "dom.iterable"
+    ],
+    "types": [
+      "node"
+    ]
   },
   "include": [
     "src"
